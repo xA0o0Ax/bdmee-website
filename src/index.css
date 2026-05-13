@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 1%;
+    --foreground: 60 7% 95%;
+    --card: 40 5% 8%;
+    --card-foreground: 60 7% 95%;
+    --popover: 40 5% 8%;
+    --popover-foreground: 60 7% 95%;
+    --primary: 60 7% 95%;
+    --primary-foreground: 40 33% 1%;
+    --secondary: 40 5% 8%;
+    --secondary-foreground: 60 7% 95%;
+    --muted: 40 5% 8%;
+    --muted-foreground: 60 7% 65%;
+    --accent: 72 100% 50%;
+    --accent-foreground: 40 33% 1%;
+    --destructive: 14 100% 50%;
+    --destructive-foreground: 60 7% 95%;
+    --border: 60 7% 95% / 0.1;
+    --input: 60 7% 95% / 0.1;
+    --ring: 72 100% 50%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-bd-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bd-dark text-bd-text font-body antialiased;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-[11px] uppercase tracking-[0.12em] text-bd-accent;
+  }
+
+  .section-heading {
+    @apply font-display text-[clamp(2.5rem,5vw,4.5rem)] font-normal leading-[0.85] tracking-[-0.02em] text-bd-text;
+  }
+
+  .stat-card {
+    @apply bg-bd-surface/60 border border-bd-border rounded-xl p-8 flex-1;
+  }
+
+  .pill-badge {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-[0.1em];
+  }
+
+  .pill-button {
+    @apply inline-flex items-center justify-center px-7 py-3 rounded-full font-body text-xs uppercase tracking-[0.08em] border border-bd-text text-bd-text transition-all duration-300;
+  }
+
+  .pill-button:hover {
+    @apply bg-bd-text text-bd-dark;
+  }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+  .reveal-delay-4 { transition-delay: 0.6s; }
+  .reveal-delay-5 { transition-delay: 0.75s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
