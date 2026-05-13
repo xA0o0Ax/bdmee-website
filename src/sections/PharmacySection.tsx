@@ -342,7 +342,7 @@ export function PharmacySection() {
 
         {/* Master Integration Table */}
         <div className="mt-24 reveal-on-scroll">
-          <span className="section-label">MASTER INTEGRATION</span>
+          <span className="section-label">INTEGRATION WITH HUMAN GENOMIC EDITS (HGE)</span>
           <h3 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-normal text-bd-text mt-4">
             HGE × BDMEE Integration Matrix
           </h3>
