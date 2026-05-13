@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './sections/HeroSection';
+import { BriefingSection } from './sections/BriefingSection';
 import { OverviewSection } from './sections/OverviewSection';
 import { ArchitectureSection } from './sections/ArchitectureSection';
 import { GenomicsSection } from './sections/GenomicsSection';
@@ -27,6 +28,7 @@ function App() {
       <Navigation />
       <main>
         <HeroSection />
+        <BriefingSection />
         <OverviewSection />
         <ArchitectureSection />
         <GenomicsSection />
