@@ -34,12 +34,34 @@ export function HeroSection() {
         background: 'radial-gradient(ellipse at 75% 25%, rgba(0,255,135,0.06) 0%, transparent 55%)',
       }} />
 
-      {/* Scan line effect */}
+      {/* CRT scanline texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.012]"
         style={{
           backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,135,1) 2px, rgba(0,255,135,1) 3px)',
           backgroundSize: '100% 4px',
+        }}
+      />
+
+      {/* Coordinate grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,255,135,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,135,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px',
+        }}
+      />
+
+      {/* Animated horizontal scan beam */}
+      <div
+        className="absolute left-0 right-0 h-[1px] pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, transparent 0%, rgba(0,255,135,0.35) 30%, rgba(0,229,176,0.5) 50%, rgba(0,255,135,0.35) 70%, transparent 100%)',
+          animation: 'hero-scan 8s ease-in-out infinite',
+          top: '40%',
         }}
       />
 

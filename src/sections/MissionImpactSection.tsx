@@ -1,4 +1,5 @@
 import { useCountUp } from '../hooks/useCountUp';
+import { OrganicNetwork } from '../components/OrganicNetwork';
 
 function StatBlock({ value, label, title, description, suffix = '', color = '#00ff87', why }: {
   value: number;
@@ -27,10 +28,11 @@ function StatBlock({ value, label, title, description, suffix = '', color = '#00
 
 export function MissionImpactSection() {
   return (
-    <section id="mission" className="py-[120px]" style={{
+    <section id="mission" className="relative py-[120px] overflow-hidden" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #040f08 50%, #010a06 100%)',
     }}>
-      <div className="max-w-[1400px] mx-auto px-6">
+      <OrganicNetwork opacity={0.22} />
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6">
         <span className="section-label reveal-on-scroll">MISSION IMPACT</span>
         <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-normal text-bd-text leading-[0.88] tracking-[-0.03em] mt-4 reveal-on-scroll">
           Three Problems.<br />One Biological Solution.

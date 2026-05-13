@@ -1,4 +1,5 @@
 import { BioParticles } from '../components/BioParticles';
+import { OrganicNetwork } from '../components/OrganicNetwork';
 
 export function VisionSection() {
   return (
@@ -7,6 +8,7 @@ export function VisionSection() {
     }}>
       {/* BioParticles */}
       <BioParticles count={25} />
+      <OrganicNetwork opacity={0.18} />
 
       {/* Background glow */}
       <div
