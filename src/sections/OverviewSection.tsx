@@ -7,35 +7,35 @@ const PILLARS = [
     label: 'Launch Mass Eliminated',
     desc: 'From Launching Materials to Launching Information',
     why: 'Conventional Mars habitats require 80–120 tonnes of pressurized steel per module. Every kilogram to Mars orbit costs $10,000–$50,000. BDMEE ships dormant biology — gram-scale seed payloads that self-assemble into full habitat structures on-site, collapsing the launch mass problem entirely.',
-    color: '#22d3ee',
+    color: '#00ff87',
   },
   {
     stat: '3',
     label: 'Specialized Organisms',
     desc: 'Distributed Architecture Over Monolithic Design',
     why: 'No single organism can simultaneously optimize radiation shielding, pharmaceutical synthesis, and atmospheric processing — the metabolic demands are antagonistic. Three specialized strains eliminate single-point failure: if one subsystem degrades, the others remain fully operational.',
-    color: '#4ade80',
+    color: '#00e5b0',
   },
   {
     stat: '99.99%',
     label: 'Biocontainment Assured',
     desc: 'Planetary Protection via Synthetic Auxotrophy',
     why: 'Mars hosts native phosphate (PO₄³⁻) at ~0.6% regolith mass — a viable energy source for any escaped organism with standard phosphate metabolism. BDMEE organisms are re-engineered to require phosphite (PO₃³⁻), a compound absent from all known natural planetary environments. Escape equals metabolic starvation.',
-    color: '#c084fc',
+    color: '#b157ff',
   },
   {
     stat: '∞',
     label: 'Pharmaceutical Shelf Life',
     desc: 'On-Demand Synthesis vs. Expiring Stockpiles',
     why: 'A 25-month Mars mission exceeds the stability window of most critical drugs. B. subtilis spores have been revived from 250-million-year-old salt deposits. BDMEE converts this biological property into a pharmaceutical distribution network: spores don\'t expire — they wait.',
-    color: '#fbbf24',
+    color: '#ffb300',
   },
   {
     stat: '4+',
     label: 'Target Environments',
     desc: 'One Blueprint, Infinite Destinations',
     why: 'Genetic programs are information, not hardware. The same biological blueprint re-expresses itself in Martian regolith, Europan ice, microgravity carbon-fiber scaffolds, or Lunar lava tubes — adapting to local substrate chemistry without mission-specific hardware redesign.',
-    color: '#fb923c',
+    color: '#ff7043',
   },
 ];
 
@@ -72,9 +72,9 @@ function LiquidGlassCanvas() {
       const dist = Math.sqrt((u - 0.5) ** 2 + (v - 0.5) ** 2);
       const brightness = Math.floor((1 - dist * 1.2) * 180);
       const clamped = Math.max(0, Math.min(255, brightness));
-      envData[i * 4] = Math.floor(clamped * 0.3);
-      envData[i * 4 + 1] = Math.floor(clamped * 0.8);
-      envData[i * 4 + 2] = clamped;
+      envData[i * 4] = Math.floor(clamped * 0.1);
+      envData[i * 4 + 1] = Math.floor(clamped * 0.9);
+      envData[i * 4 + 2] = Math.floor(clamped * 0.5);
       envData[i * 4 + 3] = 255;
     }
     const envTexture = new THREE.DataTexture(envData, envSize, envSize, THREE.RGBAFormat);
@@ -100,7 +100,7 @@ function LiquidGlassCanvas() {
       defines: { PI: '3.14159265359' },
       uniforms: {
         uTime: { value: 0 },
-        uHue: { value: 0.55 },
+        uHue: { value: 0.35 },
         uHueVariation: { value: 0.3 },
         uDensity: { value: 0.5 },
         uDisplacement: { value: 0.66 },
@@ -301,10 +301,10 @@ function LiquidGlassCanvas() {
 
 export function OverviewSection() {
   return (
-    <section id="overview" className="relative min-h-screen overflow-hidden section-glow-cyan">
+    <section id="overview" className="relative min-h-screen overflow-hidden section-glow-green">
       <LiquidGlassCanvas />
 
-      <div className="relative z-10 bg-bd-dark/88 backdrop-blur-sm">
+      <div className="relative z-10 bg-bd-dark/90 backdrop-blur-sm">
         <div className="max-w-[1400px] mx-auto px-6 py-[120px]">
           <span className="section-label reveal-on-scroll">CORE PROPOSITION</span>
 
@@ -316,13 +316,17 @@ export function OverviewSection() {
             BDMEE is not a construction project. It is a programming project — where the code is DNA, the compiler is evolution, and the factory is the organism itself.
           </p>
 
-          {/* Stat Cards */}
+          {/* Pillar Cards */}
           <div className="flex flex-col md:flex-row gap-5 mt-20">
             {PILLARS.map((pillar, i) => (
               <div
                 key={i}
                 className={`stat-card reveal-on-scroll reveal-delay-${i + 1} group`}
-                style={{ borderColor: `${pillar.color}18` }}
+                style={{
+                  borderColor: `${pillar.color}18`,
+                  borderTopWidth: '3px',
+                  borderTopColor: pillar.color,
+                }}
               >
                 <div
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -348,11 +352,14 @@ export function OverviewSection() {
 
           {/* Pull Quote */}
           <div className="mt-24 max-w-[900px] mx-auto text-center reveal-on-scroll">
-            <div className="w-[80px] h-px mx-auto mb-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(34,211,238,0.4), transparent)' }} />
-            <blockquote className="font-display text-[clamp(1.4rem,2.8vw,2.4rem)] font-normal text-bd-text/85 leading-[1.2]">
+            <div className="w-[80px] h-px mx-auto mb-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,255,135,0.45), transparent)' }} />
+            <blockquote
+              className="font-display text-[clamp(1.4rem,2.8vw,2.4rem)] font-normal leading-[1.2] glow-text"
+              style={{ color: 'rgba(184,240,204,0.9)' }}
+            >
               "We are not building habitats. We are programming them into existence. Every wall is a living factory. Every surface is a sensor. Every organism is a redundant backup system."
             </blockquote>
-            <div className="w-[80px] h-px mx-auto mt-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(34,211,238,0.4), transparent)' }} />
+            <div className="w-[80px] h-px mx-auto mt-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,255,135,0.45), transparent)' }} />
           </div>
         </div>
       </div>

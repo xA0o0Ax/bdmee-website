@@ -53,10 +53,10 @@ export function Navigation() {
       <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" className="text-bd-accent">
-            <path d="M14 2L24.5 8V20L14 26L3.5 20V8L14 2Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
-            <circle cx="14" cy="14" r="4" stroke="currentColor" strokeWidth="1.5" fill="none" />
-            <circle cx="14" cy="14" r="1.5" fill="currentColor" />
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2L24.5 8V20L14 26L3.5 20V8L14 2Z" stroke="#00ff87" strokeWidth="1.5" fill="none" />
+            <circle cx="14" cy="14" r="4" stroke="#00ff87" strokeWidth="1.5" fill="none" />
+            <circle cx="14" cy="14" r="1.5" fill="#00ff87" />
           </svg>
           <span className="font-body text-xs uppercase tracking-[0.18em] text-bd-text/70">
             BDMEE
@@ -71,7 +71,7 @@ export function Navigation() {
               onClick={() => scrollToSection(item.href)}
               className={`px-4 py-1.5 rounded-full font-body text-xs uppercase tracking-[0.08em] transition-all duration-300 ${
                 activeSection === item.href.slice(1)
-                  ? 'bg-bd-accent/15 text-bd-accent border border-bd-accent/30'
+                  ? 'bg-bd-accent/10 text-bd-accent border border-bd-accent/30'
                   : 'text-bd-text/50 border border-transparent hover:text-bd-text/80 hover:border-bd-border'
               }`}
             >

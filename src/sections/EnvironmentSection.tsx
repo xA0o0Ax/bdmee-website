@@ -4,7 +4,7 @@ const ENVIRONMENTS = [
   {
     name: 'Martian Surface',
     status: 'Baseline Target',
-    statusColor: '#34d399',
+    statusColor: '#00e676',
     description: 'C. sphaerospermum binds local silicate regolith to form the primary radiation exo-crust. Phosphite vascular system operates via gravity-fed circulation at 0.38g. The Martian sol (24h 37min) is close enough to Earth\'s 24-hour circadian period that bacterial gene regulation circuits function without recalibration.',
     challenge: 'High GCR flux (~230 mSv/year surface dose), low atmospheric pressure (0.6 kPa vs Earth\'s 101 kPa), perchlorates in regolith, −60°C average temperature',
     solution: 'Hyper-melanized fungal exo-crust attenuates GCR. Habitat internal pressurization. Perchlorate tolerance present in C. sphaerospermum wild type. Thermal management via metabolic heat generation and insulating mycelial structure.',
@@ -14,7 +14,7 @@ const ENVIRONMENTS = [
   {
     name: 'Ice Moons (Europa / Enceladus)',
     status: 'Adapted',
-    statusColor: '#22d3ee',
+    statusColor: '#00ff87',
     description: 'Regolith replaced by water-ice and silicate dust. Fungal matrix acts as a biological antifreeze and binder, generating a Pykrete-like composite (organic-ice) with compression strength exceeding pure ice by 4–14×. The deep-ocean proximity of these moons makes them scientifically critical habitation targets.',
     challenge: 'Extreme cold (−160°C surface), Europa\'s 540 mSv/day surface radiation from Jupiter\'s magnetosphere, limited sunlight for photosynthesis, ice substrate instead of silicate',
     solution: 'Thermal vascular system maintains 20°C habitat core via electrically-heated fluid. Outer exo-crust intentionally freezes into radiation-attenuating ice-armor composite. Photosynthesis replaced by chemolithotrophy from hydrothermal vent chemistry in subsurface deployment.',
@@ -24,7 +24,7 @@ const ENVIRONMENTS = [
   {
     name: 'Zero-Gravity Transit Stations',
     status: 'Modified',
-    statusColor: '#c084fc',
+    statusColor: '#b157ff',
     description: 'No local regolith available. BDMEE is seeded onto pre-fabricated lightweight carbon-fiber scaffold frames. Vascular mesh relies on capillary-action microfluidics (<500 μm channel diameter) rather than gravity-driven circulation. Organisms function identically in microgravity — multiple ISS experiments confirm this.',
     challenge: 'Complete microgravity (no gravity-driven flow), no planetary material for substrate, radiation from both GCR and trapped radiation belts in medium Earth orbit',
     solution: 'Carbon-fiber scaffold substrate — mycelium binds to carbon fiber with tensile adhesion of ~2.1 MPa, comparable to silicate. Capillary-action microfluidics at sub-500 μm channel diameter maintain fluid flow via surface tension in 0g. Standard melanin shielding applies.',
@@ -34,7 +34,7 @@ const ENVIRONMENTS = [
   {
     name: 'Venusian Surface',
     status: 'Non-Viable',
-    statusColor: '#f87171',
+    statusColor: '#ff4444',
     description: '465°C surface temperature and 92× Earth atmospheric pressure (9.2 MPa). All biological carbon-bond structures (proteins, nucleic acids, lipid membranes) denature completely above ~122°C — the absolute upper limit of known life. The BDMEE system cannot operate in this environment.',
     challenge: '465°C surface temperature, 9.2 MPa atmospheric pressure, sulfuric acid clouds, no liquid water, extreme CO₂ atmosphere',
     solution: 'System physical limit — biological carbon-bond architecture breaks down irreversibly at these temperatures. No known engineering pathway exists to overcome this constraint within carbon-based biology.',
@@ -43,12 +43,18 @@ const ENVIRONMENTS = [
   },
 ];
 
+const VIABILITY_TABLE = [
+  { param: 'Temperature', range: '−20°C to +60°C (active growth)', note: 'Spore dormancy viable to −196°C' },
+  { param: 'Radiation', range: '≤2,000 mSv/year (operational)', note: 'Spore dormancy radiation-resistant beyond this' },
+  { param: 'Water Activity', range: 'aW ≥ 0.85 (active growth)', note: 'Spore dormancy water-independent' },
+];
+
 export function EnvironmentSection() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   return (
     <section className="py-[120px]" style={{
-      background: 'linear-gradient(180deg, #020610 0%, #050912 50%, #020610 100%)',
+      background: 'linear-gradient(180deg, #010a06 0%, #030d07 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">
         <span className="section-label reveal-on-scroll">ENVIRONMENTAL PORTABILITY</span>
@@ -111,12 +117,29 @@ export function EnvironmentSection() {
           ))}
         </div>
 
-        {/* Environmental Limits note */}
-        <div className="mt-12 p-6 bg-bd-surface/40 border border-bd-border rounded-2xl reveal-on-scroll">
-          <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-bd-text/30 mb-2">Design Boundary Condition</p>
-          <p className="font-body text-sm text-bd-text/55 max-w-[800px] leading-relaxed">
-            The biological viability boundary for all BDMEE chassis organisms is defined by three physical parameters: temperature (−20°C to +60°C operating range, with spore dormancy viable down to −196°C), radiation flux (surface dose ≤2,000 mSv/year operational; spore dormancy radiation-resistant beyond this), and liquid water availability (minimum water activity aw ≥ 0.85 for active growth; spore dormancy water-independent). All target environments have been assessed against these parameters.
-          </p>
+        {/* Physical Viability Envelope Table */}
+        <div className="mt-16 reveal-on-scroll">
+          <h4 className="font-body text-base font-semibold text-bd-text mb-6">Physical Viability Envelope</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-bd-border">
+                  {['Parameter', 'Operational Range', 'Dormancy Condition'].map(h => (
+                    <th key={h} className="text-left font-mono text-[10px] uppercase tracking-[0.12em] text-bd-text/35 pb-3 pr-6">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {VIABILITY_TABLE.map((row, i) => (
+                  <tr key={i} className="border-b border-bd-border/40">
+                    <td className="font-body text-sm font-medium text-bd-text py-4 pr-6">{row.param}</td>
+                    <td className="font-mono text-xs text-bd-accent py-4 pr-6">{row.range}</td>
+                    <td className="font-body text-xs text-bd-text/50 py-4">{row.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>

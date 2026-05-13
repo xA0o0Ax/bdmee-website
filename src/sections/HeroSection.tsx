@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { BioParticles } from '../components/BioParticles';
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -14,7 +15,7 @@ export function HeroSection() {
       {/* Video Background */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
         src="/videos/hero-video.mp4"
         poster="/images/hero-bg.jpg"
         loop
@@ -23,18 +24,21 @@ export function HeroSection() {
         playsInline
       />
 
+      {/* BioParticles overlay */}
+      <BioParticles count={18} />
+
       {/* Deep space gradient layers */}
-      <div className="absolute inset-0 bg-gradient-to-t from-bd-dark via-bd-dark/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-bd-dark/80 via-transparent to-transparent" />
-      <div className="absolute inset-0" style={{
-        background: 'radial-gradient(ellipse at 80% 20%, rgba(34,211,238,0.04) 0%, transparent 60%)',
+      <div className="absolute inset-0 bg-gradient-to-t from-bd-dark via-bd-dark/70 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-bd-dark/90 via-transparent to-transparent" />
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse at 75% 25%, rgba(0,255,135,0.06) 0%, transparent 55%)',
       }} />
 
       {/* Scan line effect */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.015]"
+        className="absolute inset-0 pointer-events-none opacity-[0.012]"
         style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34,211,238,1) 2px, rgba(34,211,238,1) 3px)',
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,135,1) 2px, rgba(0,255,135,1) 3px)',
           backgroundSize: '100% 4px',
         }}
       />
@@ -43,40 +47,41 @@ export function HeroSection() {
       <div className="relative z-10 h-full flex flex-col justify-end pb-[14vh] px-6 max-w-[1400px] mx-auto">
         {/* Badge */}
         <div className="absolute top-[120px] left-6">
-          <span className="pill-badge bg-bd-dark/70 backdrop-blur-xl border border-bd-accent/20 text-bd-accent/80">
-            Deep Space Colonization Concept &middot; TRL 2
+          <span className="pill-badge bg-bd-dark/70 backdrop-blur-xl border border-bd-accent/25 text-bd-accent/90">
+            Open-Source Deep Space Biology · TRL 2
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="font-display text-[13vw] font-normal text-bd-text leading-[0.85] tracking-[-0.04em]">
+        <h1 className="font-display text-[13vw] font-normal leading-[0.85] tracking-[-0.04em] bio-gradient-text">
           BDMEE
         </h1>
-        <h2 className="font-display text-[6.5vw] font-normal leading-[0.88] tracking-[-0.02em] -mt-2"
-          style={{
-            background: 'linear-gradient(135deg, #cde4ff 0%, #22d3ee 50%, #4ade80 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
+        <h2
+          className="font-display text-[6vw] font-normal leading-[0.88] tracking-[-0.02em] -mt-2 bio-gradient-text"
         >
           The Living Frontier
         </h2>
 
-        {/* Subline */}
-        <p className="font-body text-[clamp(1rem,1.4vw,1.2rem)] text-bd-text/55 mt-5 max-w-lg leading-relaxed">
-          Programming Life to Build Worlds — where DNA is the blueprint, organisms are the construction crew, and evolution is the quality-control system.
+        {/* Tagline */}
+        <p className="font-body text-[clamp(0.95rem,1.3vw,1.15rem)] text-bd-text/55 mt-5 max-w-[520px] leading-relaxed">
+          Programming Life to Build Worlds — where DNA is the blueprint, biology is the manufacturing process, and the organism is both factory and product.
         </p>
 
-        {/* Bottom stats bar */}
-        <div className="flex gap-8 mt-10">
+        {/* Green glow line above stat bar */}
+        <div className="mt-10 h-px max-w-[560px]" style={{
+          background: 'linear-gradient(90deg, rgba(0,255,135,0.6), rgba(0,229,176,0.3), transparent)',
+        }} />
+
+        {/* Bottom stat bar */}
+        <div className="flex gap-10 mt-5">
           {[
             { v: 'TRL 2', l: 'Technology Readiness' },
             { v: '3', l: 'Engineered Organisms' },
             { v: '95%', l: 'Mass Reduction' },
+            { v: '25mo', l: 'Mission Coverage' },
           ].map((s, i) => (
             <div key={i} className="flex items-center gap-3">
-              <span className="font-display text-2xl text-bd-accent">{s.v}</span>
+              <span className="font-display text-2xl text-bd-accent glow-text">{s.v}</span>
               <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-bd-text/35">{s.l}</span>
             </div>
           ))}
@@ -88,7 +93,7 @@ export function HeroSection() {
         <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-bd-text/30">
           Scroll
         </span>
-        <div className="w-px h-8 bg-gradient-to-b from-bd-accent/50 to-transparent animate-scroll-bounce" />
+        <div className="w-px h-8 bg-gradient-to-b from-bd-accent/60 to-transparent animate-scroll-bounce" />
       </div>
     </section>
   );

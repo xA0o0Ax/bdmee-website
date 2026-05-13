@@ -5,7 +5,7 @@ const TARGETS = [
     id: 'A',
     title: 'Kill Switch — Synthetic Auxotrophy',
     subtitle: 'pstS knockout + ptxD (phosphite dehydrogenase) insertion',
-    color: '#22d3ee',
+    color: '#00ff87',
     organism: 'Cladosporium sphaerospermum & Bacillus subtilis',
     description: 'Mars regolith contains native phosphate (PO₄³⁻) at 0.5–0.8% mass concentration — a viable energy source for any escaped organism with standard phosphate metabolism. This edit replaces the phosphate uptake transporter (pstS knockout) with ptxD from Pseudomonas stutzeri, which exclusively processes phosphite (PO₃³⁻): a compound absent from all known natural planetary bodies. Survival outside the habitat\'s synthetic nutrient stream becomes biologically impossible — not improbable.',
     why: 'COSPAR Category IV planetary protection requirements prohibit the introduction of organisms capable of autonomous survival on Mars. A toxin-based kill switch fails — evolution selects against it within hundreds of generations. A metabolic kill switch cannot be escaped: you cannot evolve a need for a nutrient that does not exist in your environment.',
@@ -14,7 +14,7 @@ const TARGETS = [
     id: 'B',
     title: 'Hyper-Melanization',
     subtitle: 'gpdA constitutive promoter driving pks1 overexpression',
-    color: '#4ade80',
+    color: '#00e5b0',
     organism: 'Cladosporium sphaerospermum',
     description: 'Wild-type C. sphaerospermum upregulates melanin only in active radiation stress — a slow, reactive mechanism calibrated for individual survival, not construction timelines. Replacing the stress-responsive promoter with the constitutive gpdA promoter from Aspergillus converts melanin synthesis from a stress response into a manufacturing program: every cell division from germination onward produces maximum melanin density. The 21-day pre-crew deployment window requires this from the first hour of growth.',
     why: 'Galactic Cosmic Rays (GCR) are the single most unresolved barrier to human Mars missions. Earth\'s magnetosphere deflects >99% of GCR flux. Mars has <1% of Earth\'s magnetic field strength, providing essentially zero protection. Radiotrophic melanin (developed by C. sphaerospermum in Chernobyl\'s reactor exclusion zone) absorbs ionizing radiation and transduces it into chemical energy — the only known biological mechanism for this conversion at relevant radiation energies.',
@@ -23,7 +23,7 @@ const TARGETS = [
     id: 'C',
     title: 'Bio-Pharmacy Chassis',
     subtitle: 'Δpps Δsrf protease-deficient chassis + amyE safe-harbor integration',
-    color: '#c084fc',
+    color: '#b157ff',
     organism: 'Bacillus subtilis (Δpps Δsrf chassis)',
     description: 'The Δpps Δsrf chassis removes the two dominant protease pathways in B. subtilis that degrade heterologous proteins before they can be secreted, achieving a >10-fold increase in therapeutic protein yield. Pharmaceutical genes are integrated at the amyE locus — a genomically stable, transcriptionally neutral safe harbor that resists silencing over hundreds of generations. Orthogonal inducers (xylose, arabinose, IPTG, rhamnose) activate each drug node independently with zero cross-activation.',
     why: 'The International Space Station stocks over 200 pharmaceuticals. A 25-month Mars mission exceeds the stability window of every temperature-sensitive drug in that formulary. B. subtilis spores survive 250-million-year dormancy periods; they are impervious to space radiation in their dormant state. The amyE safe harbor was chosen specifically because native amylase expression at this locus has been eliminated — there is no competing metabolic context to silence the inserted therapeutic gene.',
@@ -33,7 +33,7 @@ const TARGETS = [
 const SEQUENCE_DETAILS = [
   {
     target: 'A',
-    color: '#22d3ee',
+    color: '#00ff87',
     label: 'Synthetic Auxotrophy Cassette',
     sequence: '[HomArmA] — P_veg — RBS(AGGAGG) — ptxD — T_rrnB — [HomArmB]',
     note: 'ptxD from Pseudomonas stutzeri WD (GenBank M62908). Phosphite dehydrogenase catalyzes PO₃³⁻ → PO₄³⁻ with NAD⁺ as cofactor. pstS knockout ensures no residual phosphate uptake capacity remains.',
@@ -41,7 +41,7 @@ const SEQUENCE_DETAILS = [
   },
   {
     target: 'B',
-    color: '#4ade80',
+    color: '#00e5b0',
     label: 'Hyper-Melanization Architecture',
     sequence: '[P_gpdA] — pks1 ATG — replaces endogenous stress-inducible TATA box',
     note: 'gpdA (glyceraldehyde-3-phosphate dehydrogenase) promoter from Aspergillus nidulans: constitutively active at maximum expression level from germination. Decouples melanin synthesis from radiation stress → continuous melanin factory during 21-day deployment.',
@@ -49,7 +49,7 @@ const SEQUENCE_DETAILS = [
   },
   {
     target: 'C',
-    color: '#c084fc',
+    color: '#b157ff',
     label: 'Pharmacy Chassis Architecture',
     sequence: 'Δpps Δsrf — amyE::P_xylA-[therapeutic gene]-T_rrnB',
     note: 'Orthogonal promoter multiplexing: each drug occupies an isolated genomic locus activated by a unique inducer. 100 independent micro-chamber nodes per drug type. Spatial isolation eliminates cross-contamination between drug production lines.',
@@ -61,19 +61,19 @@ const PRINCIPLES = [
   {
     num: '01',
     title: 'The Shielding Substitution Theorem',
-    color: '#22d3ee',
+    color: '#00ff87',
     body: 'Every dB of habitat radiation shielding achieved by BDMEE exo-crust is one less dB of genomic intervention required in the crew. If the exo-crust reduces crew dose to <50 mSv/year (Earth surface equivalent), then TERT activation and aggressive NRF2 editing shift from necessary to elective enhancements. Habitat biology protects crew biology — sequentially, not in parallel.',
   },
   {
     num: '02',
     title: 'The Inducibility Imperative',
-    color: '#4ade80',
+    color: '#00e5b0',
     body: 'Constitutive crew genomic edits create pharmacological antagonisms with acute drug therapy. A constitutive CXCR4 overexpression edit combined with Filgrastim (G-CSF) creates a futile signaling cycle leading to paradoxical immune suppression rather than neutrophil mobilization. Default to inducible architectures (tet-ON, riboswitch, light-gated promoters) for any crew edit intended to interact with the pharmacy layer.',
   },
   {
     num: '03',
     title: 'The Pharmacy-as-Insurance Doctrine',
-    color: '#c084fc',
+    color: '#b157ff',
     body: 'AAV episomal edits carry a ~5–8 year half-life under ideal conditions. Promoter silencing of integrated transgenes runs 30–60% over 1–3 years in mammalian systems. On a 25-month Mars mission, engineering must assume edit decay from Day 1, not edit permanence. The BDMEE pharmacy exists not as a supplement to crew genomic edits — it exists as the primary fallback when those edits inevitably degrade.',
   },
 ];
@@ -98,10 +98,10 @@ function DNAHelix() {
     const rotationSpeed = 0.0025;
     const nucleotides = ['a', 't', 'c', 'g'];
     const nucleotideColors: Record<string, string> = {
-      a: '#22d3ee',
-      t: '#4ade80',
-      c: '#c084fc',
-      g: '#fb923c',
+      a: '#00ff87',
+      t: '#00e5b0',
+      c: '#b157ff',
+      g: '#ff7043',
     };
 
     const strandA = document.createElement('div');
@@ -118,7 +118,7 @@ function DNAHelix() {
     for (let i = 0; i < numDiscs; i++) {
       for (let s = 0; s < 2; s++) {
         const disc = document.createElement('div');
-        disc.style.cssText = `position:absolute;left:50%;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:rgba(7,15,30,0.8);border:1.5px solid rgba(205,228,255,0.15);backface-visibility:hidden;transform-style:preserve-3d;`;
+        disc.style.cssText = `position:absolute;left:50%;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:rgba(5,15,10,0.8);border:1.5px solid rgba(184,240,204,0.15);backface-visibility:hidden;transform-style:preserve-3d;`;
         const nucleotide = nucleotides[(i + s) % 4];
         const color = nucleotideColors[nucleotide];
         const core = document.createElement('div');
@@ -167,7 +167,7 @@ function DNAHelix() {
 export function GenomicsSection() {
   return (
     <section id="genomics" className="relative py-[120px] overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #020610 0%, #060816 50%, #020610 100%)',
+      background: 'linear-gradient(180deg, #010a06 0%, #030e08 50%, #010a06 100%)',
     }}>
       <DNAHelix />
 
@@ -240,7 +240,7 @@ export function GenomicsSection() {
                     </span>
                   </div>
                   <h4 className="font-body text-sm font-semibold text-bd-text">{detail.label}</h4>
-                  <code className="block mt-3 font-mono text-xs text-bd-accent/75 bg-bd-dark/60 rounded-lg px-4 py-3 break-all leading-relaxed">
+                  <code className="block mt-3 font-mono text-xs text-bd-accent/80 bg-bd-dark/70 rounded-lg px-4 py-3 break-all leading-relaxed border border-bd-accent/10">
                     {detail.sequence}
                   </code>
                   <p className="font-body text-xs text-bd-text/50 mt-3 leading-relaxed">{detail.note}</p>

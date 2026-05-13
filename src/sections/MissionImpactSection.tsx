@@ -1,6 +1,6 @@
 import { useCountUp } from '../hooks/useCountUp';
 
-function StatBlock({ value, label, title, description, suffix = '', color = '#22d3ee', why }: {
+function StatBlock({ value, label, title, description, suffix = '', color = '#00ff87', why }: {
   value: number;
   label: string;
   title: string;
@@ -13,7 +13,7 @@ function StatBlock({ value, label, title, description, suffix = '', color = '#22
 
   return (
     <div ref={ref} className="flex-1 min-w-[220px] reveal-on-scroll">
-      <span className="font-display text-[4.5rem] leading-none" style={{ color }}>{display}</span>
+      <span className="font-display text-[4.5rem] leading-none" style={{ color, textShadow: `0 0 30px ${color}40` }}>{display}</span>
       <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-bd-text/40 mt-1">{label}</p>
       <h3 className="font-body text-base font-semibold text-bd-text mt-4">{title}</h3>
       <p className="font-body text-sm text-bd-text/60 mt-2 leading-relaxed">{description}</p>
@@ -28,7 +28,7 @@ function StatBlock({ value, label, title, description, suffix = '', color = '#22
 export function MissionImpactSection() {
   return (
     <section id="mission" className="py-[120px]" style={{
-      background: 'linear-gradient(180deg, #020610 0%, #040a16 50%, #020610 100%)',
+      background: 'linear-gradient(180deg, #010a06 0%, #040f08 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">
         <span className="section-label reveal-on-scroll">MISSION IMPACT</span>
@@ -47,33 +47,43 @@ export function MissionImpactSection() {
             description="Dormant biology in gram-scale payloads replaces tonnes of conventional construction material. The information to build a habitat replaces the mass of the habitat itself."
             why="Current Mars habitat proposals require 40–120 tonnes per pressurized module for launch. At $10,000–$50,000/kg to Mars transfer orbit, this makes large-scale colonization economically impossible within any realistic budget. BDMEE converts the construction problem from a logistics problem into an information problem — and information is effectively massless."
             suffix="%"
-            color="#22d3ee"
+            color="#00ff87"
           />
 
           <div className="reveal-on-scroll flex-1 min-w-[220px]" style={{ transitionDelay: '0.15s' }}>
-            <span className="font-display text-[4.5rem] text-bd-bio leading-none">GCR</span>
+            <span
+              className="font-display text-[4.5rem] leading-none"
+              style={{ color: '#00e5b0', textShadow: '0 0 30px rgba(0,229,176,0.4)' }}
+            >
+              GCR
+            </span>
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-bd-text/40 mt-1">Attenuation Achieved</p>
             <h3 className="font-body text-base font-semibold text-bd-text mt-4">The Radiation Problem</h3>
             <p className="font-body text-sm text-bd-text/60 mt-2 leading-relaxed">
               Hyper-melanized radiotrophic fungal exo-crust attenuates Galactic Cosmic Rays and solar particle events — the most lethal unresolved threat to long-duration deep space habitation.
             </p>
-            <div className="mt-3 p-3 rounded-lg" style={{ background: 'rgba(74,222,128,0.07)', borderLeft: '2px solid rgba(74,222,128,0.3)' }}>
-              <p className="font-mono text-[9px] uppercase tracking-[0.15em] mb-1 text-bd-bio/70">Why This Matters</p>
+            <div className="mt-3 p-3 rounded-lg" style={{ background: 'rgba(0,229,176,0.07)', borderLeft: '2px solid rgba(0,229,176,0.3)' }}>
+              <p className="font-mono text-[9px] uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(0,229,176,0.7)' }}>Why This Matters</p>
               <p className="font-body text-xs text-bd-text/50 leading-relaxed">
-                Without shielding, a Mars crew receives ~230 mSv/year surface dose — 4.6× the annual occupational limit for radiation workers. Over 18 months on the surface, this exceeds NASA's career limit for many crew members. No conventional shielding material achieves equivalent protection at BDMEE's launch mass. Melanin's radiation-transduction mechanism has no synthetic equivalent.
+                Without shielding, a Mars crew receives ~230 mSv/year surface dose — 4.6× the annual occupational limit for radiation workers. Over 18 months on the surface, this approaches or exceeds career limits for many crew members. No conventional shielding material achieves equivalent protection at BDMEE's launch mass. Melanin's radiation-transduction mechanism has no synthetic equivalent.
               </p>
             </div>
           </div>
 
           <div className="reveal-on-scroll flex-1 min-w-[220px]" style={{ transitionDelay: '0.3s' }}>
-            <span className="font-display text-[4.5rem] leading-none" style={{ color: '#c084fc' }}>∞</span>
+            <span
+              className="font-display text-[4.5rem] leading-none"
+              style={{ color: '#b157ff', textShadow: '0 0 30px rgba(177,87,255,0.35)' }}
+            >
+              ∞
+            </span>
             <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-bd-text/40 mt-1">Pharmaceutical Shelf Life</p>
             <h3 className="font-body text-base font-semibold text-bd-text mt-4">The Medical Logistics Problem</h3>
             <p className="font-body text-sm text-bd-text/60 mt-2 leading-relaxed">
               Living walls synthesize therapeutics on-demand, eliminating pharmaceutical expiration dates and cold-chain requirements for the most critical drugs on a 25-month mission.
             </p>
-            <div className="mt-3 p-3 rounded-lg" style={{ background: 'rgba(192,132,252,0.07)', borderLeft: '2px solid rgba(192,132,252,0.3)' }}>
-              <p className="font-mono text-[9px] uppercase tracking-[0.15em] mb-1 text-bd-gene/70">Why This Matters</p>
+            <div className="mt-3 p-3 rounded-lg" style={{ background: 'rgba(177,87,255,0.07)', borderLeft: '2px solid rgba(177,87,255,0.3)' }}>
+              <p className="font-mono text-[9px] uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(177,87,255,0.7)' }}>Why This Matters</p>
               <p className="font-body text-xs text-bd-text/50 leading-relaxed">
                 The ISS stocks 200+ pharmaceuticals with expiry dates ranging from 6 months to 5 years. For a Mars mission, resupply is impossible — there is no emergency pharmacy delivery from Earth. BDMEE's on-demand biosynthesis doesn't just solve the expiration problem; it solves the storage problem, the resupply problem, and the personalized-dosing problem simultaneously.
               </p>
@@ -87,13 +97,14 @@ export function MissionImpactSection() {
             description="For the first time, deep space colonization becomes economically sustainable — not through better rockets, but through better biology."
             why="The cost reduction compounds across every mission parameter: reduced launch mass (−95% materials), reduced supply missions (pharmacy on-site), reduced infrastructure complexity (self-assembling structure). Biology doesn't just reduce one cost driver — it replaces the entire cost structure of deep space habitation."
             suffix="%"
-            color="#fbbf24"
+            color="#ffb300"
           />
         </div>
 
         {/* Systems convergence note */}
         <div className="mt-20 p-8 bg-bd-surface/40 border border-bd-border rounded-2xl reveal-on-scroll" style={{
-          background: 'linear-gradient(135deg, rgba(34,211,238,0.04), rgba(74,222,128,0.04), rgba(192,132,252,0.04))',
+          background: 'linear-gradient(135deg, rgba(0,255,135,0.04), rgba(0,229,176,0.04), rgba(177,87,255,0.04))',
+          borderColor: 'rgba(0,255,135,0.12)',
         }}>
           <h4 className="font-body text-lg font-semibold text-bd-text mb-3">The Convergence Argument</h4>
           <p className="font-body text-sm text-bd-text/65 max-w-[900px] leading-relaxed">
