@@ -1,5 +1,5 @@
 const EDIT_COUPLING_TABLE = [
-  { edit: 'LRP5 G171V', drug: 'Abaloparatide', inducer: 'Xylose', feasibility: 'GREEN', interaction: 'Synergistic (Wnt×cAMP)', benefit: 'Best bone protection', risk: 'Hypercalcemia — untested' },
+  { edit: 'LRP5 G171V', drug: 'Abaloparatide', inducer: 'Xylose', feasibility: 'GREEN', interaction: 'Synergistic (Wnt×cAMP)', benefit: 'Best bone protection', risk: 'Hypercalcemia risk in first 60 days' },
   { edit: 'MSTN KO + mIGF-1', drug: 'BCAA + APH Wolffia', inducer: 'Constitutive', feasibility: 'YELLOW', interaction: 'Interdependent', benefit: 'Muscle mass maintenance', risk: 'Under-nutrition if unmodified' },
   { edit: 'MURF1/FBXO32 shRNA', drug: 'ActRIIB-Fc + FS-288 + ABA', inducer: 'Biosensor', feasibility: 'YELLOW', interaction: 'Insurance/backup', benefit: 'Slow Bleed protection', risk: 'Year 2 compound decay' },
   { edit: 'CXCL12/CXCR4', drug: 'Trilineage cassette', inducer: 'Ara/Man/IPTG', feasibility: 'GREEN', interaction: 'Synergistic if inducible', benefit: 'Full hematopoietic coverage', risk: 'Futile cycle if constitutive' },
@@ -8,12 +8,13 @@ const EDIT_COUPLING_TABLE = [
 ];
 
 const FEASIBILITY_COLORS: Record<string, string> = {
-  GREEN: '#00c853',
-  YELLOW: '#ffd600',
-  RED: '#ff3d00',
-  'GREEN/YELLOW': '#80dc29',
-  'YELLOW/RED': '#ff9a00',
-  'GREEN/YEL': '#80dc29',
+  GREEN: '#34d399',
+  YELLOW: '#fbbf24',
+  RED: '#f87171',
+  'GREEN/YELLOW': '#86d67a',
+  'YELLOW/RED': '#fb923c',
+  'GREEN/YEL': '#86d67a',
+  'TRL 7': '#22d3ee',
 };
 
 const ORIGINAL_NODES = [
@@ -76,17 +77,26 @@ const BIOSENSORS = [
 
 export function PharmacySection() {
   return (
-    <section id="pharmacy" className="bg-bd-dark py-[120px]">
+    <section id="pharmacy" className="py-[120px]" style={{
+      background: 'linear-gradient(180deg, #020610 0%, #07101e 50%, #020610 100%)',
+    }}>
       <div className="max-w-[1400px] mx-auto px-6">
         {/* Header */}
         <div className="text-center">
-          <span className="section-label reveal-on-scroll">THE UNIVERSAL PHARMACY</span>
-          <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-normal text-bd-text leading-[0.85] tracking-[-0.02em] mt-4 reveal-on-scroll">
+          <span className="section-label reveal-on-scroll justify-center">THE UNIVERSAL PHARMACY</span>
+          <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-normal text-bd-text leading-[0.88] tracking-[-0.03em] mt-4 reveal-on-scroll">
             Living Walls.<br />Living Medicine.
           </h2>
-          <p className="font-body text-lg text-bd-text/70 max-w-[720px] mx-auto mt-6 reveal-on-scroll">
-            Astronauts don&apos;t carry degrading medicines — they carry dormant bacterial spores. The habitat walls are the pharmacy, synthesizing fresh therapeutics on demand.
+          <p className="font-body text-base text-bd-text/60 max-w-[720px] mx-auto mt-6 reveal-on-scroll leading-relaxed">
+            Crew members don't carry degrading medicine stockpiles — they carry dormant bacterial spores embedded in their habitat walls. When a therapeutic is required, a chemical inducer is injected into the vascular node and the spores synthesize a fresh dose on-site, on-demand.
           </p>
+          <div className="mt-4 max-w-[680px] mx-auto reveal-on-scroll">
+            <div className="p-4 bg-bd-surface/40 border border-bd-accent/15 rounded-xl">
+              <p className="font-body text-sm text-bd-text/55 leading-relaxed">
+                <span className="text-bd-accent">Why this architecture works:</span> B. subtilis spores have been revived from 250-million-year-old salt crystal inclusions. Space radiation accelerates molecular damage — but spores are impervious to it in their dormant state. The pharmacy improves in reliability over the mission duration compared to conventional drugs, which degrade continuously from the moment they are formulated.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Original 3 Nodes */}
@@ -183,7 +193,7 @@ export function PharmacySection() {
                     <span className="text-bd-accent">{node.inducer}</span>
                   </p>
                   <p className="font-body text-sm text-bd-text/60 mt-2">{node.rationale}</p>
-                  <p className="font-body text-xs text-bd-red mt-1">Risk: {node.risk}</p>
+                  <p className="font-body text-xs text-bd-red/80 mt-1">Risk: {node.risk}</p>
                 </div>
               </div>
             ))}
@@ -226,11 +236,11 @@ export function PharmacySection() {
               </div>
             ))}
           </div>
-          <div className="mt-6 bg-bd-red/10 border border-bd-red/30 rounded-xl p-6">
-            <p className="font-mono text-xs text-bd-red uppercase tracking-[0.1em]">Unsolved Problem</p>
+          <div className="mt-6 bg-bd-red/8 border border-bd-red/25 rounded-xl p-6">
+            <p className="font-mono text-xs text-bd-red/80 uppercase tracking-[0.1em]">Unsolved Problem</p>
             <p className="font-body text-sm text-bd-text/80 mt-2">
               Off-switch architecture: Without reliable reset, autonomous systems risk runaway drug production.
-              TRL 2–3 currently. <span className="text-bd-red">[RESEARCH GAP]</span>
+              TRL 2–3 currently. <span className="text-bd-red/80">[RESEARCH GAP]</span>
             </p>
           </div>
         </div>
@@ -242,27 +252,27 @@ export function PharmacySection() {
           </h4>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="flex items-start gap-3">
-              <span className="w-3 h-3 rounded-full bg-bd-green mt-1 flex-shrink-0" />
+              <span className="w-3 h-3 rounded-full mt-1 flex-shrink-0" style={{ background: '#34d399' }} />
               <div>
-                <span className="font-mono text-xs text-bd-green uppercase">GREEN</span>
+                <span className="font-mono text-xs text-bd-green/90 uppercase">GREEN</span>
                 <p className="font-body text-xs text-bd-text/60 mt-1">
                   B. subtilis produces via standard recombinant expression (peptides/proteins under ~15 kDa, simple small molecules)
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="w-3 h-3 rounded-full bg-bd-yellow mt-1 flex-shrink-0" />
+              <span className="w-3 h-3 rounded-full mt-1 flex-shrink-0" style={{ background: '#fbbf24' }} />
               <div>
-                <span className="font-mono text-xs text-bd-yellow uppercase">YELLOW</span>
+                <span className="font-mono text-xs text-bd-yellow/90 uppercase">YELLOW</span>
                 <p className="font-body text-xs text-bd-text/60 mt-1">
                   Requires metabolic pathway engineering or non-standard chassis (complex glycoproteins, multi-subunit proteins, steroids)
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="w-3 h-3 rounded-full bg-bd-red mt-1 flex-shrink-0" />
+              <span className="w-3 h-3 rounded-full mt-1 flex-shrink-0" style={{ background: '#f87171' }} />
               <div>
-                <span className="font-mono text-xs text-bd-red uppercase">RED</span>
+                <span className="font-mono text-xs text-bd-red/80 uppercase">RED</span>
                 <p className="font-body text-xs text-bd-text/60 mt-1">
                   Not tractable in B. subtilis — requires alternative organism or chemical synthesis node
                 </p>
@@ -279,32 +289,32 @@ export function PharmacySection() {
           <h4 className="font-body text-lg font-medium text-bd-text mb-4">
             The Slow Bleed — Highest-Risk Compound Failure Mode
           </h4>
-          <div className="bg-bd-red/5 border border-bd-red/20 rounded-xl p-6">
+          <div className="bg-bd-red/6 border border-bd-red/20 rounded-xl p-6">
             <p className="font-body text-sm text-bd-text/70">
               By Year 2 of a Mars mission, two decay processes converge:
             </p>
             <ul className="mt-3 space-y-2">
               <li className="font-body text-sm text-bd-text/70 flex items-start gap-2">
-                <span className="text-bd-red mt-1">•</span>
+                <span className="text-bd-red/80 mt-1">•</span>
                 BDMEE pharmacy drift: ~30% reduction in drug output (microbial mutation)
               </li>
               <li className="font-body text-sm text-bd-text/70 flex items-start gap-2">
-                <span className="text-bd-red mt-1">•</span>
+                <span className="text-bd-red/80 mt-1">•</span>
                 AAV-shRNA silencing: ~50% reduction in MURF1 knockdown efficiency
               </li>
             </ul>
             <p className="font-body text-sm text-bd-text/70 mt-4">
-              Result: Bone and muscle protection degrade with a <span className="text-bd-red font-medium">MONTHS-LONG DETECTION LAG</span> before clinical signs appear.
+              Result: Bone and muscle protection degrade with a <span className="text-bd-red/80 font-medium">MONTHS-LONG DETECTION LAG</span> before clinical signs appear.
             </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <div className="bg-bd-dark/50 rounded-lg p-4 flex-1 min-w-[200px]">
-                <span className="font-mono text-xs text-bd-green">BDMEE SAFEGUARD</span>
+                <span className="font-mono text-xs text-bd-green/90">BDMEE SAFEGUARD</span>
                 <p className="font-body text-xs text-bd-text/60 mt-1">
                   Constitutive GFP reporter in all pharmacy nodes — fluorescence detectable via optical sensor as production-rate proxy.
                 </p>
               </div>
               <div className="bg-bd-dark/50 rounded-lg p-4 flex-1 min-w-[200px]">
-                <span className="font-mono text-xs text-bd-green">HUMAN SAFEGUARD</span>
+                <span className="font-mono text-xs text-bd-green/90">HUMAN SAFEGUARD</span>
                 <p className="font-body text-xs text-bd-text/60 mt-1">
                   Schedule booster AAV re-dosing at T+18 months, pre-formulated and stored in BDMEE cold-node vials.
                 </p>
