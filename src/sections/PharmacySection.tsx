@@ -232,11 +232,15 @@ export function PharmacySection() {
 
         {/* Biosensor Upgrade */}
         <div className="mt-16 reveal-on-scroll">
-          <h4 className="font-body text-lg font-medium text-bd-text mb-4">
+          <h4 className="font-body text-lg font-medium text-bd-text mb-2">
             Closed-Loop Biosensing Upgrade (Autonomous Pharmacy)
           </h4>
-          <p className="font-body text-sm text-bd-text/60 mb-6 max-w-[800px]">
-            Proposed upgrade: Biosensor organisms embedded in vascular mesh detect crew biomarkers shed into habitat environment. Boolean genetic logic gates in pharmacy nodes trigger autonomously.
+          <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-bd-text/35 mb-4">Current State: Manual injection of chemical inducers by crew member</p>
+          <p className="font-body text-sm text-bd-text/65 mb-4 max-w-[800px] leading-relaxed">
+            Biosensor organisms embedded in the vascular mesh continuously sample crew biomarkers shed passively into the habitat environment through respiration, sweat, and skin contact. Boolean genetic logic gates within pharmacy nodes evaluate the incoming biomarker signal and trigger therapeutic synthesis autonomously — without crew intervention or manual inducer injection.
+          </p>
+          <p className="font-body text-sm text-bd-text/65 mb-6 max-w-[800px] leading-relaxed">
+            Each biosensor circuit operates as a two-input AND gate: a biomarker threshold signal (input A) AND a time-delay confirmation (input B) must both be satisfied before therapeutic production is authorized. This prevents single-spike false positives from triggering drug synthesis. The confirmation window is tunable per node — from 2 hours for cardiac stress markers to 72 hours for bone resorption indices.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {BIOSENSORS.map((sensor, i) => (

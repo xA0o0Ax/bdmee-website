@@ -8,6 +8,7 @@ import { PharmacySection } from './sections/PharmacySection';
 import { DeploymentSection } from './sections/DeploymentSection';
 import { EnvironmentSection } from './sections/EnvironmentSection';
 import { MissionImpactSection } from './sections/MissionImpactSection';
+import { CataphractSection } from './sections/CataphractSection';
 import { VisionSection } from './sections/VisionSection';
 import { ProposalFooterSection } from './sections/ProposalFooterSection';
 import { useScrollReveal } from './hooks/useScrollReveal';
@@ -33,6 +34,7 @@ function App() {
         <DeploymentSection />
         <EnvironmentSection />
         <MissionImpactSection />
+        <CataphractSection />
         <VisionSection />
       </main>
       <ProposalFooterSection />

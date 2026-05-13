@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { label: 'Genomics', href: '#genomics' },
   { label: 'Pharmacy', href: '#pharmacy' },
   { label: 'Mission', href: '#mission' },
+  { label: 'CATAPHRACT', href: '#cataphract' },
 ];
 
 export function Navigation() {
