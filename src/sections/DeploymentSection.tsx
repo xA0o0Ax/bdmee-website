@@ -51,7 +51,7 @@ const TIMELINE_ITEMS = [
 
 export function DeploymentSection() {
   return (
-    <section id="deployment" className="py-[120px]" style={{
+    <section id="deployment" className="py-[80px]" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #030d07 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">

@@ -53,7 +53,7 @@ export function EnvironmentSection() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   return (
-    <section className="py-[120px]" style={{
+    <section className="py-[80px]" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #030d07 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">

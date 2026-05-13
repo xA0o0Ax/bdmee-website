@@ -102,7 +102,7 @@ const PILLARS = [
 
 export function BriefingSection() {
   return (
-    <section className="py-[120px]" style={{
+    <section className="py-[80px]" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #040e08 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">

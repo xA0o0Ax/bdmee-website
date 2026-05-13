@@ -70,7 +70,7 @@ export function HeroSection() {
         {/* Badge */}
         <div className="absolute top-[120px] left-6">
           <span className="pill-badge bg-bd-dark/70 backdrop-blur-xl border border-bd-accent/25 text-bd-accent/90">
-            Open-Source Deep Space Biology · TRL 2
+            Deep Space Biology · TRL 2
           </span>
         </div>
 

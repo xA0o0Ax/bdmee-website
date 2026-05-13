@@ -3,7 +3,7 @@ import { OrganicNetwork } from '../components/OrganicNetwork';
 
 export function VisionSection() {
   return (
-    <section className="relative py-[180px] overflow-hidden" style={{
+    <section className="relative py-[90px] overflow-hidden" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #051508 40%, #010a06 100%)',
     }}>
       {/* BioParticles */}

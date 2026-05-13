@@ -80,7 +80,7 @@ const BIOSENSORS = [
 
 export function PharmacySection() {
   return (
-    <section id="pharmacy" className="py-[120px]" style={{
+    <section id="pharmacy" className="py-[80px]" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #04120a 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">
@@ -103,7 +103,7 @@ export function PharmacySection() {
         </div>
 
         {/* Original 3 Nodes */}
-        <div className="grid md:grid-cols-3 gap-8 mt-20">
+        <div className="grid md:grid-cols-3 gap-8 mt-12">
           {ORIGINAL_NODES.map((node, i) => (
             <div
               key={i}
@@ -153,7 +153,7 @@ export function PharmacySection() {
         </p>
 
         {/* Expanded 12-Node Manifest */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">EXPANDED MANIFEST</span>
           <h3 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-normal text-bd-text mt-4">
             Optimized BDMEE Pharmaceutical Manifest
@@ -341,7 +341,7 @@ export function PharmacySection() {
         </div>
 
         {/* Master Integration Table */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">INTEGRATION WITH HUMAN GENOMIC EDITS (HGE)</span>
           <h3 className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-normal text-bd-text mt-4">
             HGE × BDMEE Integration Matrix

@@ -54,7 +54,7 @@ const DRIFT_TABLE = [
 
 export function CataphractSection() {
   return (
-    <section id="cataphract" className="relative py-[140px] overflow-hidden" style={{
+    <section id="cataphract" className="relative py-[80px] overflow-hidden" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #050e09 40%, #020c07 70%, #010a06 100%)',
     }}>
       <OrganicNetwork opacity={0.15} />
@@ -92,7 +92,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── THREE PILLARS ── */}
-        <div className="mt-20 reveal-on-scroll">
+        <div className="mt-12 reveal-on-scroll">
           <span className="section-label">THE THREE PILLARS</span>
           <h3 className="font-display text-[clamp(1.8rem,3vw,2.8rem)] font-normal text-bd-text mt-3">
             One System, Three Domains
@@ -180,7 +180,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── CLOSED METABOLIC LOOP ── */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">METABOLIC ARCHITECTURE</span>
           <h3 className="font-display text-[clamp(1.5rem,2.5vw,2.2rem)] font-normal text-bd-text mt-3">The Closed Metabolic Loop</h3>
           <p className="font-body text-sm text-bd-text/55 mt-3 max-w-[700px] leading-relaxed">
@@ -211,7 +211,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── HGE EDITS TABLE ── */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">PILLAR I DETAIL</span>
           <h3 className="font-display text-[clamp(1.5rem,2.5vw,2.2rem)] font-normal text-bd-text mt-3">Human Genomic Edit Targets</h3>
           <p className="font-body text-sm text-bd-text/55 mt-3 mb-8 max-w-[700px] leading-relaxed">
@@ -257,7 +257,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── APH CROP STACK ── */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">PILLAR III DETAIL</span>
           <h3 className="font-display text-[clamp(1.5rem,2.5vw,2.2rem)] font-normal text-bd-text mt-3">APH Five-Plus-Two Mandatory Crop Stack</h3>
           <p className="font-body text-sm text-bd-text/55 mt-3 mb-8 max-w-[700px] leading-relaxed">
@@ -289,7 +289,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── THREE-WAY INTERACTION TABLE ── */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">CROSS-PILLAR COUPLING</span>
           <h3 className="font-display text-[clamp(1.5rem,2.5vw,2.2rem)] font-normal text-bd-text mt-3">Crop × Human Edit × BDMEE Interaction Matrix</h3>
           <p className="font-body text-sm text-bd-text/55 mt-3 mb-8 max-w-[700px] leading-relaxed">
@@ -320,7 +320,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── RADIATION LAYERED DEFENSE ── */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">LAYERED DEFENSE</span>
           <h3 className="font-display text-[clamp(1.5rem,2.5vw,2.2rem)] font-normal text-bd-text mt-3">Five-Layer Radiation Defense Matrix</h3>
           <p className="font-body text-sm text-bd-text/55 mt-3 mb-8 max-w-[700px] leading-relaxed">
@@ -357,7 +357,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── DUAL-GENOME DRIFT ── */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <span className="section-label">SYSTEMS-LEVEL RISK</span>
           <h3 className="font-display text-[clamp(1.5rem,2.5vw,2.2rem)] font-normal text-bd-text mt-3">The Dual-Genome Drift Problem</h3>
           <p className="font-body text-sm text-bd-text/55 mt-3 mb-8 max-w-[700px] leading-relaxed">
@@ -387,7 +387,7 @@ export function CataphractSection() {
         </div>
 
         {/* ── CONVERGENCE STATEMENT ── */}
-        <div className="mt-20 reveal-on-scroll p-10 rounded-2xl" style={{
+        <div className="mt-12 reveal-on-scroll p-10 rounded-2xl" style={{
           background: 'linear-gradient(135deg, rgba(0,255,135,0.04), rgba(0,229,176,0.04), rgba(177,87,255,0.04))',
           border: '1px solid rgba(0,255,135,0.12)',
         }}>

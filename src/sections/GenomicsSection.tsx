@@ -166,7 +166,7 @@ function DNAHelix() {
 
 export function GenomicsSection() {
   return (
-    <section id="genomics" className="relative py-[120px] overflow-hidden" style={{
+    <section id="genomics" className="relative py-[80px] overflow-hidden" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #030e08 50%, #010a06 100%)',
     }}>
       <DNAHelix />

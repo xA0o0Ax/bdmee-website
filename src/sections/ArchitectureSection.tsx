@@ -41,19 +41,18 @@ const SUBSYSTEMS = [
 
 export function ArchitectureSection() {
   return (
-    <section id="architecture" className="bg-bd-dark py-[120px]" style={{
+    <section id="architecture" className="bg-bd-dark py-[80px]" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #030f08 50%, #010a06 100%)',
     }}>
       <div className="max-w-[1400px] mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16">
-          {/* Left Column */}
+
+        {/* Top: label + title + text in two columns */}
+        <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-[55%]">
             <span className="section-label reveal-on-scroll">SYSTEM ARCHITECTURE</span>
             <h2 className="font-display text-[clamp(2.5rem,4vw,3.5rem)] font-normal text-bd-text leading-[0.88] tracking-[-0.03em] mt-4 reveal-on-scroll">
               The Multi-Trophic<br />Myco-Foundry
             </h2>
-
-            {/* Why distributed architecture */}
             <div className="mt-6 reveal-on-scroll">
               <p className="font-body text-base text-bd-text/70 max-w-[480px] leading-relaxed">
                 Rather than a single monolithic "super-organism," BDMEE distributes biological functions across three distinct specialists — each optimized for its role without metabolic interference from competing functions.
@@ -64,13 +63,14 @@ export function ArchitectureSection() {
                 </p>
               </div>
             </div>
-
             <p className="font-body text-base text-bd-text/65 max-w-[480px] mt-5 reveal-on-scroll leading-relaxed">
               The system operates as a closed-loop bio-industrial ecosystem. By shipping programmable, dormant biology rather than static steel and degrading pharmaceuticals, this ecosystem ensures that future explorers carry the <em>information</em> to survive — not the mass.
             </p>
+          </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 mt-12 reveal-on-scroll">
+          {/* Stats + TRL badge stacked vertically on the right */}
+          <div className="lg:w-[45%] flex flex-col justify-center gap-8 reveal-on-scroll">
+            <div className="flex flex-wrap gap-8">
               {[
                 { v: '60%', l: 'Mission Cost Reduction' },
                 { v: '95%', l: 'Mass-to-Orbit Savings' },
@@ -82,32 +82,26 @@ export function ArchitectureSection() {
                 </div>
               ))}
             </div>
-
-            {/* TRL Badge */}
-            <div className="mt-10 reveal-on-scroll">
-              <div className="inline-flex items-center gap-4 px-6 py-4 bg-bd-surface/60 border border-bd-accent/20 rounded-xl">
-                <div>
-                  <span className="font-display text-3xl bio-gradient-text">TRL 2</span>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-bd-text/40 mt-1">Integrated System</p>
-                </div>
-                <div className="w-px h-10 bg-bd-border" />
-                <div>
-                  <p className="font-body text-sm text-bd-text/60 max-w-[280px]">
-                    Concept formulated and genetic pathways computationally modeled. Individual sub-systems validated at TRL 3–4 in independent laboratory and spaceflight experiments.
-                  </p>
-                </div>
+            <div className="inline-flex items-center gap-4 px-6 py-4 bg-bd-surface/60 border border-bd-accent/20 rounded-xl self-start">
+              <div>
+                <span className="font-display text-3xl bio-gradient-text">TRL 2</span>
+                <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-bd-text/40 mt-1">Integrated System</p>
               </div>
+              <div className="w-px h-10 bg-bd-border" />
+              <p className="font-body text-sm text-bd-text/60 max-w-[260px]">
+                Concept formulated and genetic pathways computationally modeled. Individual sub-systems validated at TRL 3–4 in independent laboratory and spaceflight experiments.
+              </p>
             </div>
-          </div>
-
-          {/* Right Column — Habitat Cross-Section Diagram */}
-          <div className="lg:w-[45%] flex items-center justify-center reveal-on-scroll">
-            <HabitatCrossSection />
           </div>
         </div>
 
+        {/* Full-width diagram — much larger */}
+        <div className="mt-12 reveal-on-scroll" style={{ maxWidth: '960px', margin: '3rem auto 0' }}>
+          <HabitatCrossSection />
+        </div>
+
         {/* Sub-System Table */}
-        <div className="mt-24 reveal-on-scroll">
+        <div className="mt-14 reveal-on-scroll">
           <h3 className="font-body text-lg font-semibold text-bd-text mb-2">Sub-System Component Breakdown</h3>
           <p className="font-body text-sm text-bd-text/50 mb-8 max-w-[700px]">
             Each sub-system has been independently validated in relevant environments. The integrated TRL reflects the system-level readiness of all components operating in concert — the hardest engineering milestone.

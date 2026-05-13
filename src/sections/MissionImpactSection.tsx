@@ -28,7 +28,7 @@ function StatBlock({ value, label, title, description, suffix = '', color = '#00
 
 export function MissionImpactSection() {
   return (
-    <section id="mission" className="relative py-[120px] overflow-hidden" style={{
+    <section id="mission" className="relative py-[80px] overflow-hidden" style={{
       background: 'linear-gradient(180deg, #010a06 0%, #040f08 50%, #010a06 100%)',
     }}>
       <OrganicNetwork opacity={0.22} />
@@ -104,7 +104,7 @@ export function MissionImpactSection() {
         </div>
 
         {/* Systems convergence note */}
-        <div className="mt-20 p-8 bg-bd-surface/40 border border-bd-border rounded-2xl reveal-on-scroll" style={{
+        <div className="mt-12 p-8 bg-bd-surface/40 border border-bd-border rounded-2xl reveal-on-scroll" style={{
           background: 'linear-gradient(135deg, rgba(0,255,135,0.04), rgba(0,229,176,0.04), rgba(177,87,255,0.04))',
           borderColor: 'rgba(0,255,135,0.12)',
         }}>

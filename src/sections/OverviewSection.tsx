@@ -305,7 +305,7 @@ export function OverviewSection() {
       <LiquidGlassCanvas />
 
       <div className="relative z-10 bg-bd-dark/90 backdrop-blur-sm">
-        <div className="max-w-[1400px] mx-auto px-6 py-[120px]">
+        <div className="max-w-[1400px] mx-auto px-6 py-[80px]">
           <span className="section-label reveal-on-scroll">CORE PROPOSITION</span>
 
           <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-normal text-bd-text leading-[0.88] tracking-[-0.03em] mt-4 reveal-on-scroll">
@@ -317,7 +317,7 @@ export function OverviewSection() {
           </p>
 
           {/* Pillar Cards */}
-          <div className="flex flex-col md:flex-row gap-5 mt-20">
+          <div className="flex flex-col md:flex-row gap-5 mt-12">
             {PILLARS.map((pillar, i) => (
               <div
                 key={i}
@@ -351,13 +351,13 @@ export function OverviewSection() {
           </div>
 
           {/* Pull Quote */}
-          <div className="mt-24 max-w-[900px] mx-auto text-center reveal-on-scroll">
+          <div className="mt-14 max-w-[900px] mx-auto text-center reveal-on-scroll">
             <div className="w-[80px] h-px mx-auto mb-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,255,135,0.45), transparent)' }} />
             <blockquote
               className="font-display text-[clamp(1.4rem,2.8vw,2.4rem)] font-normal leading-[1.2] glow-text"
               style={{ color: 'rgba(184,240,204,0.9)' }}
             >
-              "We are not building habitats. We are programming them into existence. Every wall is a living factory. Every surface is a sensor. Every organism is a redundant backup system."
+              "We are not building habitats. We are programming them into existence. Every wall is a living factory. Every surface is a sensor. Every organism is a pillar to a system."
             </blockquote>
             <div className="w-[80px] h-px mx-auto mt-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,255,135,0.45), transparent)' }} />
           </div>
